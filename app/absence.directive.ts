@@ -1,4 +1,4 @@
-import { Directive, HostBinding, HostListener, Input, ElementRef } from '@angular/core';
+import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
   selector: '[samsAbsence]'

@@ -25,16 +25,18 @@ export class StudentFormComponent {
         Validators.required,
         Validators.pattern('[a-zA-Z ]+')
       ])),
-      bdate: this.formBuilder.control(''),
+      birthdate: this.formBuilder.control('', Validators.compose([
+        Validators.required,
+        Validators.pattern('[1-2][0-9][0-9][0-9]\/[0-1][0-9]\/[0-3][0-9]')
+      ])),
       gender: this.formBuilder.control('Female'),
       grade: this.formBuilder.control('1st Grade'),
-      absence: this.formBuilder.control('false'),
-      id: this.formBuilder.control(0)
+      absence: this.formBuilder.control(false),
+      id: this.formBuilder.control(this.appService.getStudent().length+1)
     });
   }
 
   onSubmit(student) {
-    student.id = this.appService.getStudent().length;
     this.appService.addStudent(student);
     this.router.navigateByUrl("list");
   }

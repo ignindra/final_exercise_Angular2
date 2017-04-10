@@ -1,5 +1,4 @@
 export class AppService {
-    
     getStudent() {
         return this.studentList;
     }
@@ -46,10 +45,10 @@ export class AppService {
         let index = this.studentList.indexOf(student);
         this.studentList.forEach(function(item) {
             if (item.id === student.id) {
-                if (item.absence === "true") {
-                    item.absence = "false";
+                if (item.absence) {
+                    item.absence = false;
                 } else {
-                    item.absence = "true";
+                    item.absence = true;
                 }
             }
         });
@@ -70,18 +69,18 @@ export class AppService {
         {
             id: 1,
             name: "Student one",
-            birthdate: "1999-11-02",
+            birthdate: "1999/11/02",
             gender: "Male",
             grade: "3rd Grade",
-            absence: "false"
+            absence: false
         },
         {
             id: 2,
             name: "Student two",
-            birthdate: "2000-12-23",
+            birthdate: "2000/12/23",
             gender: "Female",
             grade: "6th Grade",
-            absence: "false"
+            absence: false
         },
     ];
 }

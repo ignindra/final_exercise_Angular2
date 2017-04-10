@@ -21,9 +21,12 @@ export class LoginFormComponent {
     this.loginForm = this.formBuilder.group({
       username: this.formBuilder.control('', Validators.compose([
         Validators.required,
-        Validators.pattern('\\S+')
+        Validators.pattern('[a-zA-Z0-9 ]+')
       ])),
-      password: this.formBuilder.control('', Validators.required)
+      password: this.formBuilder.control('', Validators.compose([
+        Validators.required,
+        Validators.minLength(6)
+      ]))
     });
   }
 
@@ -31,7 +34,7 @@ export class LoginFormComponent {
     if (this.appService.validateLogin(user)) {
       this.router.navigateByUrl("list");
     } else {
-      alert("User does not exist. Please input the correct username or password");
+      alert("User does not exist. Please input the correct username or password.");
     }
   }
 }

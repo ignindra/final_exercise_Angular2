@@ -1,13 +1,7 @@
 <nav>
-  <a routerLink="/login" id="menu1">
-    Login
-  </a>
-  <a routerLink="/newuser" id="menu2">
-    Create User
-  </a>
-  <a routerLink="/newstudent" id="menu3">
-    Create Student
-  </a>
+  <a #menu1 (click)="loginCheck()">Login</a>
+  <a routerLink="/newuser">Create User</a>
+  <a (click)="studentCheck()">Create Student</a>
 </nav>
 <section>
   <router-outlet></router-outlet>

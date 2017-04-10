@@ -13,12 +13,6 @@ import { studentInfoToken, studentInfoLists } from './providers';
 import { AbsenceDirective } from './absence.directive';
 import { AppService } from './app.service';
 import { routing } from './app.routing';
-// import { MediaItemComponent } from './media-item.component';
-// import { MediaItemListComponent } from './media-item-list.component';
-// import { FavoriteDirective } from './favorite.directive';
-// import { CategoryListPipe } from './category-list.pipe';
-// import { MediaItemFormComponent } from './media-item-form.component';
-// import { MockXHRBackend } from './mock-xhr-backend';
 
 @NgModule({
   imports: [

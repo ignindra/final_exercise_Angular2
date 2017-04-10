@@ -1,6 +1,6 @@
 <section>
   <sams-student
-    [ngClass]="{'not-absence': student.absence === 'false', 'is-absence': student.absence === 'true'}" 
+    [ngClass]="{'is-absence': student.absence}"
     *ngFor="let student of studentList"
     [student]="student"
     (deleteStudent)="onStudentDelete($event)"

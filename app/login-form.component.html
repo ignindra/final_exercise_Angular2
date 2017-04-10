@@ -1,20 +1,16 @@
 <header>
   <h2>Login</h2>
 </header>
-<!--(ngSubmit)="onSubmit(studentForm.value)"-->
 <form [formGroup]="loginForm">
   <ul>
     <li>
       <label for="username">Username</label>
       <input type="text" name="username" id="username" formControlName="username">
-      <div *ngIf="loginForm.controls.username.errors?.pattern" class="error">
-        Username has invalid characters
-      </div>
     </li>
     <li>
-      <label for="password">Username</label>
-      <input type="text" name="password" id="password" formControlName="password">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" formControlName="password">
     </li>
   </ul>
-  <button type="button" [disabled]="!loginForm.valid" (click)="onSubmit(loginForm.value)">login</button>
+  <button type="button" [disabled]="!loginForm.valid" (click)="onSubmit(loginForm.value)">Login</button>
 </form>

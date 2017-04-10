@@ -1,23 +1,25 @@
 <header>
   <h2>Add New Student</h2>
 </header>
-<!--(ngSubmit)="onSubmit(studentForm.value)"-->
 <form [formGroup]="studentForm">
   <ul>
     <li>
       <label for="name">Name</label>
       <input type="text" name="name" id="name" formControlName="name">
       <div *ngIf="studentForm.controls.name.errors?.pattern" class="error">
-        Name has invalid characters
+        Only letters and spaces are allowed.
       </div>
     </li>
     <li>
       <label for="birthdate">Birth Date</label>
-      <input type="date" name="birthdate" id="birthdate" formControlName="bdate">
+      <input type="date" name="birthdate" id="birthdate" formControlName="birthdate" placeholder="format yyyy/mm/dd">
+      <div *ngIf="studentForm.controls.birthdate.errors?.pattern" class="error">
+        Format yyyy/mm/dd (1999/02/31 or 1999/12/02)
+      </div>
     </li>
     <li>
-      <label for="gender">Grade</label>
-      <select name="grade" id="grade" formControlName="gender">
+      <label for="gender">Gender</label>
+      <select name="gender" id="gender" formControlName="gender">
         <option *ngFor="let item of studentInfoLists.gender" value="{{item}}">{{item}}</option>
       </select>
     </li>

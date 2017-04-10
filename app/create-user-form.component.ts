@@ -21,9 +21,12 @@ export class CreateUserFormComponent {
     this.newForm = this.formBuilder.group({
       username: this.formBuilder.control('', Validators.compose([
         Validators.required,
-        Validators.pattern('\\S+')
+        Validators.pattern('[a-zA-Z0-9 ]+')
       ])),
-      password: this.formBuilder.control('', Validators.required)
+      password: this.formBuilder.control('', Validators.compose([
+        Validators.required,
+        Validators.minLength(6)
+      ]))
     });
   }
 
@@ -32,7 +35,7 @@ export class CreateUserFormComponent {
       alert("New user successfully added");
       this.router.navigateByUrl("");
     } else {
-      alert("User already exists. Please input the another username");
+      alert("Username already exists. Please choose another username");
     }
   }
 }

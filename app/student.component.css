@@ -7,22 +7,18 @@
   background-color: #1a434c;
   padding: 10px;
   color: #bdc2c5;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 h2 {
   font-size: 1.6em;
   flex: 1;
 }
-:host.not-absence {
-  border-color: #53ace4;
-}
-:host.not-absence > h2 {
-  color: #53ace4;
-}
 :host.is-absence {
-  border-color: #45bf94;
+  border-color: #e2c818;
 }
 :host.is-absence > h2 {
-  color: #45bf94;
+  color: #e2c818;
 }
 .tools {
   margin-top: 8px;
@@ -30,9 +26,9 @@ h2 {
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-.absence {
+.student {
   display: block;
-  background-color: #37ad79;
+  background-color: #bdc2c5;
   padding: 4px;
   font-size: .8em;
   border-radius: 4px;
@@ -40,8 +36,8 @@ h2 {
   text-decoration: none;
   cursor: pointer;
 }
-.absence.is-absence {
-  background-color: #bdc2c5;
+.student.is-absence {
+  background-color: #e2c818;
   cursor: pointer;
 }
 .delete {
