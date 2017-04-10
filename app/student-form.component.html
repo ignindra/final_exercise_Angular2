@@ -1,0 +1,38 @@
+<header>
+  <h2>Add New Student</h2>
+</header>
+<!--(ngSubmit)="onSubmit(studentForm.value)"-->
+<form [formGroup]="studentForm">
+  <ul>
+    <li>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" formControlName="name">
+      <div *ngIf="studentForm.controls.name.errors?.pattern" class="error">
+        Name has invalid characters
+      </div>
+    </li>
+    <li>
+      <label for="birthdate">Birth Date</label>
+      <input type="date" name="birthdate" id="birthdate" formControlName="bdate">
+    </li>
+    <li>
+      <label for="gender">Grade</label>
+      <select name="grade" id="grade" formControlName="gender">
+        <option *ngFor="let item of studentInfoLists.gender" value="{{item}}">{{item}}</option>
+      </select>
+    </li>
+    <li>
+      <label for="grade">Grade</label>
+      <select name="grade" id="grade" formControlName="grade">
+        <option *ngFor="let grades of studentInfoLists.classGrade" value="{{grades}}">{{grades}}</option>
+      </select>
+    </li>
+    <li>
+      <input type="text" name="absence" id="absence" formControlName="absence" hidden>
+    </li>
+    <li>
+      <input type="text" name="id" id="id" formControlName="id" hidden>
+    </li>
+  </ul>
+  <button type="button" [disabled]="!studentForm.valid" (click)="onSubmit(studentForm.value)">Save</button>
+</form>

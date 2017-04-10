@@ -1,0 +1,13 @@
+<h2>{{ student.name }}</h2>
+<img src="media/user.png"/>
+<div>{{ student.birthdate | date: 'shortDate' }}</div>
+<div>{{ student.gender }}</div>
+<div>{{ student.grade }}</div>
+<div class="tools">
+  <a class="delete" (click)="onDelete()">
+    remove
+  </a>
+  <a [samsAbsence]="student.absence === 'false'" class="absence" (click)="switchStatus()">
+    absent
+  </a>
+</div>

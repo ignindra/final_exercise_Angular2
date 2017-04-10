@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  padding: 10px;
+  background-color: #1a434c;
+  color: white;
+  cursor: pointer;
+}

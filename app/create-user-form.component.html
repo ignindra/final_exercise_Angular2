@@ -1,0 +1,20 @@
+<header>
+  <h2>Create User</h2>
+</header>
+<!--(ngSubmit)="onSubmit(studentForm.value)"-->
+<form [formGroup]="newForm">
+  <ul>
+    <li>
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" formControlName="username">
+      <div *ngIf="newForm.controls.username.errors?.pattern" class="error">
+        Username has invalid characterss
+      </div>
+    </li>
+    <li>
+      <label for="password">Username</label>
+      <input type="text" name="password" id="password" formControlName="password">
+    </li>
+  </ul>
+  <button type="button" [disabled]="!newForm.valid" (click)="onSubmit(newForm.value)">Add</button>
+</form>
